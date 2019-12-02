@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <link rel="stylesheet" type="text/css" href="game.css">
+        <script src="game.js"></script>
+        <script>
+        var board = [
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    [" "," "," "," "," "," "," "," "," "," "],
+                    ];
+
+        var stage = "set"
+        var round = 1
+        var num_user_spaceship = 0
+        var num_inactive_mine = 0
+        var num_robotic_spaceship = 0
+        var turn = 0
+        var user_row
+        var user_column
+        var robotic_array = new Array()
+        var mine_array = new Array()
+        var asteroid_array = new Array()
+
+        init()
+        </script>
+    </head>
+    <body>
+        <div id="container">
+                <div id="left">
+                    <div id="title">Spaceship Game</div>
+                    <div id="game_information" class="font"></div>
+                    <div id="turn_information" class="font"></div>
+                    <div id="information" class="font"></div>
+                </div>
+                <div id="game_area">
+                        <div id="table_area">
+                                <table id="table"></table>
+                        </div>
+                        <div id="user_input" hidden>
+                                <input type="text" id="textfield">
+                                <button type="button" id="user_turn_button" onclick="userTurn()">Comfirm User Operation<span class="pus"></span></button>
+                        </div> 
+                </div> 
+                <div id="right">
+                    <div id="icon_area" class="font">
+                        <img src="image/user spaceship.jpeg"  alt="user spaceship" />User Spaceship<br>
+                        <img src="image/robotic spaceship.jpeg"  alt="robotic spaceship" />Robotic Spaceship<br>
+                        <img src="image/asteroid.jpeg"  alt="asteroid" />Asteroid<br>
+                        <img src="image/active mine.jpeg"  alt="active mine" />Active Mine<br>
+                        <img src="image/mine.jpeg"  alt="mine" />Mine<br>
+
+                    </div>
+                    <div id="computer_button_area" hidden>
+                        <button type="button" id="computer_turn_button" onclick="computerTurn()">Execute Computer Turn<span class="pus"></span></button>
+                    </div>
+                    <div id="button_area">
+                        <button type="button" onclick="checkSetting()">Finish Setting<span class="pus"></span></button>
+                    </div>
+                </div> 
+        </div>
+        <script>
+            init()
+        </script>
+    </body>
+</html>

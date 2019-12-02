@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hero Game</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
+    <!--<script src="js/index.js">-->
+    <script  type='text/javascript' src='js/index.js'></script>
+</head>
+
+<body onload="create_table()">
+    <div id="particles">
+        <div class="intro"></div>
+    </div>
+    <p class="Title">Hero Game</p>
+    <div class="main">
+        <div class="show1">
+            <div id="stage"></div>
+            <div id="player" class="font">
+                <img src="img/1.jpg"  alt="Hero" />Hero<br>
+                <img src="img/2.jpg"  alt="Killer Robots" />Killer Robots<br>
+                <img src="img/3.jpg"  alt="Treasure" />Treasure<br>
+                <img src="img/4.jpg"  alt="Obstacle" />Obstacle<br>
+            </div>
+            <div class="button">
+                <div id="start">
+                    <button  type="button" onclick="button()" >Start</button>
+                </div>
+                <div id="exit" hidden>
+                    <button type="button" onclick="button()" >Exit</button>
+                </div>
+
+            </div>
+        </div>
+
+    <!--The area of playing game-->
+        <div id="game_area">
+            <div id="status"></div>
+            <div id="table_area">
+            </div>
+        </div>
+
+        <div id="Instruction">
+            <p id="info"><b>Instruction</b></p>
+            <b>Setup stage:</b> input character <br>
+            h = hero <br>
+            k = killer <br>
+            "1-9" number = treasure <br>
+            o = obstacles<br>
+            <br>
+            <b>Play stage:</b> move hero to collect treasure and escape from the killer<br>
+            <br>
+            <b>End stage:</b> You win if you survive and yours score is higher than the killers'<br>
+            <br>
+        </div>
+        <div id="move" hidden>
+            <b><p id="user"></p></b>
+            <input type="text" id="textfield">
+            <button type="button" id="user_turn_button" onclick="move_hero()">OK</button>
+            <!--<button type="button" id="computer" onclick="move_killer()">killer</button>-->
+            <!--<button type="button" id="user_turn_button" onclick="startGame()">OK</button>-->
+        </div>
+        <div id = "killer_button" hidden>
+            <b><p id="killer_turn"></p></b>
+            <button type="button" id="computer" onclick="move_killer()">killer</button>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

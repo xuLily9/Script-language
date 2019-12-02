@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Space Escape Game</title>
+        <style>
+            td {
+                border: 1px solid black;
+                width: 2em;
+                height: 2em;
+                margin: 0em;
+                text-align: center;
+                vertical-align: middle;
+            }
+            #content {
+                width:80%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            div.RedBG  { background-color: red; }
+        </style>
+        <body>
+            <div id="content">
+                <h1>Space Escape</h1>
+                <div id="stage"></div>
+                <div id="status"></div>
+                <br>
+                <div id="gameboard_container"><table id="gameboard"></table></div>
+                <div id="error"></div>
+                <div id="button_container"><button id="button">Start</button></div>
+                <br>
+                <div id="Instructions">
+                    Setup stage: Click on the cells and enter the the object key. <br>
+                    a = Asteroid <br>
+                    m = Inactive Mine <br>
+                    r = Robot Spaceship <br>
+                    u = Player Spaceship<br>
+                    <br>
+                    Play stage: Use WASD to move around and activate the mines. <br>
+                    v = Activated Mine <br>
+                    vu = Player Spaceship on an Activated Mine <br>
+                    <br>
+                    End stage: You win if you destroy all the robot ships or all mines are activated. <br>
+                    <br>
+                </div>
+            </div>
+            <noscript>JavaScript is not supported or enabled.</noscript>
+            <script type="text/javascript" src="spaceescape.js"></script>
+        </body>
+    </head>
+</html>

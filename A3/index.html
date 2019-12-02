@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hero Game</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen" />
+
+    <!--This is the background js, not related to the game js-->
+    <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+    <script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+</head>
+
+<!--<script src="js/index.js">-->
+<script  type='text/javascript'>
+    function int_stage(){
+        var stage=document.getElementById("stage");
+        stage.innerHTML="Setup Stage";
+        create_table();
+    }
+
+    function create_table(){
+        var table_area=document.getElementById("table_area");
+        var table=document.createElement("table");
+        table.setAttribute("id","table");
+        table.setAttribute("border","1");
+
+         for (var a = 0; a<10 ; a++) {
+            var tr = document.createElement("tr");
+            tr.setAttribute("id",a);
+            for (var b = 0; b <10 ; b++) {
+                var td = document.createElement("td");
+                td.setAttribute("class","td");
+                td.setAttribute("id",b);
+                //td.addEventListener("click",setCell.bind(null,x,y),false);
+                //td.addEventListener("click",user_input(a,b));
+                td.innerHTML="row1";
+                tr.appendChild(td);
+             }
+             table.appendChild(tr);
+         }
+        table_area.appendChild(table);
+    }
+
+    function user_input(a,b){
+        var obj = prompt("Please only enter an object:");
+        // input_img(obj);
+
+    //     // if(obj=="o"||obj=="h"||obj=="k"){
+    //     //     input_img(obj);
+    //     // }else if(parseInt(obj)<=9||parseInt(obj)>=1){
+    //     //     input_img(obj);
+    //     //
+    //     // } else if (obj!= null){
+    //     //     alert("Invalid object, please input again.");
+    //     // }
+    //
+     }
+
+
+    function input_img(obj){
+        var img =document.createElement("img");
+        if(obj=="o"){
+            img.setAttribute("src","img/4.jpg");
+
+        }else if(obj=="h"){
+            img.setAttribute("src","img/1.jpg");
+
+        }else if(obj=="k"){
+            img.setAttribute("src","img/2.jpg");
+
+        }else if(parseInt(obj)<=9&&parseInt(obj)>=1){
+            img.setAttribute("src","img/3.jpg");
+
+        }else if (obj!= null){
+            alert("Invalid object, please input again.");
+        }
+    }
+</script>
+
+<body onload="int_stage()">
+    <div id="particles">
+        <div class="intro">
+        </div>
+    </div>
+
+    <p class="Title">Hero Game</p>
+
+    <div class="main">
+        <div class="show1">
+            <div id="stage"></div>
+            <div id="player" class="font">
+                <img src="img/1.jpg"  alt="Hero" />Hero<br>
+                <img src="img/2.jpg"  alt="Killer Robots" />Killer Robots<br>
+                <img src="img/3.jpg"  alt="Treasure" />Treasure<br>
+                <img src="img/4.jpg"  alt="Obstacle" />Obstacle<br>
+            </div>
+            <div class="button">
+                <div id="start">
+                    <button type="button" onclick="checkSetting()" >Start<span class="pus"></span></button>
+                </div>
+                <div id="exit">
+                    <button type="button" onclick="checkSetting()">Exit<span class="pus"></span></button>
+                </div>
+
+            </div>
+        </div>
+
+    <!--The area of playing game-->
+        <div id="game_area">
+            <!--<div id="table_area">-->
+                <div class="wrapper">
+                    <div class="1">1</div>
+                    <div class="2">2</div>
+                    <div class="3">3</div>
+                    <div class="4">4</div>
+                    <div class="5">5</div>
+                    <div class="6">6</div>
+                    <div class="7">7</div>
+                    <div class="8">8</div>
+                    <div class="9">9</div>
+                    <div class="10">10</div>
+                    <div class="11">11</div>
+                <!--</div>-->
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
